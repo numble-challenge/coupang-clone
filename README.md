@@ -1,6 +1,6 @@
 # NUMBLE - 가장 실무에 가까운 쿠팡 클론코딩 1회차
 
-<img width="752" alt="(220531)메인이미지_쿠팡클론코딩챌린지 (1)" src="https://user-images.githubusercontent.com/103182032/174029124-6e64d0c2-fc52-48c9-bd73-b91546682242.png">
+<img width="752" alt="(220531)메인이미지_쿠팡클론코딩챌린지 (1)" src="https://user-images.githubusercontent.com/103182032/174029124-6e64d0c2-fc52-48c9-bd73-b91546682242.png" style="width:100%">
 
 [챌린지 페이지](https://www.numble.it/aa4de2e3-4dee-43a6-8d71-125cca983ca6)
 
