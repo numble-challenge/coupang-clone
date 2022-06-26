@@ -1,3 +1,4 @@
+import { accessTokenExpires, refreshTokenExpires } from "@/constants/token";
 import axios from "axios";
 import cookies from "js-cookie";
 
@@ -27,11 +28,11 @@ interface LoginParams {
 
 class AuthService {
   setAccessToken(accessToken: string) {
-    cookies.set("accessToken", accessToken, { expires: 1 });
+    cookies.set("accessToken", accessToken, { expires: accessTokenExpires });
   }
 
   setRefreshToken(refreshToken: string) {
-    cookies.set("refreshToken", refreshToken, { expires: 7 });
+    cookies.set("refreshToken", refreshToken, { expires: refreshTokenExpires });
   }
 
   /** refreshToken을 이용해 새로운 토큰을 발급받습니다. */
