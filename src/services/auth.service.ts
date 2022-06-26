@@ -20,6 +20,11 @@ interface SignUpParams {
   agreements: SignupAgreements;
 }
 
+interface LoginParams {
+  email: string;
+  password: string;
+}
+
 class AuthService {
   setAccessToken(accessToken: string) {
     cookies.set("accessToken", accessToken, { expires: 1 });
@@ -60,10 +65,10 @@ class AuthService {
   }
 
   /** 이미 생성된 계정의 토큰을 발급받습니다. */
-  async login(email: string, password: string) {
+  async login(params: LoginParams) {
     const { data } = await axios.post(
       `${process.env.NEXT_PUBLIC_API_HOST}/auth/login`,
-      { email, password }
+      params
     );
 
     this.setAccessToken(data.access);
