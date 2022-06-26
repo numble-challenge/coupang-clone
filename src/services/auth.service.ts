@@ -13,6 +13,14 @@ type SignupAgreements = {
 };
 
 class AuthService {
+  setAccessToken(accessToken: string) {
+    cookies.set("accessToken", accessToken, { expires: 1 });
+  }
+
+  setRefreshToken(refreshToken: string) {
+    cookies.set("refreshToken", refreshToken, { expires: 7 });
+  }
+
   /** refreshToken을 이용해 새로운 토큰을 발급받습니다. */
   async refresh() {
     const refreshToken = cookies.get("refreshToken");
@@ -28,8 +36,8 @@ class AuthService {
       }
     );
 
-    cookies.set("accessToken", data.access, { expires: 1 });
-    cookies.set("refreshToken", data.refresh, { expires: 7 });
+    this.setAccessToken(data.access);
+    this.setRefreshToken(data.refresh);
   }
 
   /** 새로운 계정을 생성하고 토큰을 발급받습니다. */
@@ -45,8 +53,8 @@ class AuthService {
       { email, password, name, phoneNumber, agreements }
     );
 
-    cookies.set("accessToken", data.access, { expires: 1 });
-    cookies.set("refreshToken", data.refresh, { expires: 7 });
+    this.setAccessToken(data.access);
+    this.setRefreshToken(data.refresh);
   }
 
   /** 이미 생성된 계정의 토큰을 발급받습니다. */
@@ -56,8 +64,8 @@ class AuthService {
       { email, password }
     );
 
-    cookies.set("accessToken", data.access, { expires: 1 });
-    cookies.set("refreshToken", data.refresh, { expires: 7 });
+    this.setAccessToken(data.access);
+    this.setRefreshToken(data.refresh);
   }
 }
 
