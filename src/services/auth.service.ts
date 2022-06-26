@@ -27,7 +27,7 @@ class AuthService {
     if (!refreshToken) return;
 
     const { data } = await axios.post(
-      process.env.NEXT_PUBLIC_API_HOST + "/auth/refresh",
+      `${process.env.NEXT_PUBLIC_API_HOST}/auth/refresh`,
       null,
       {
         headers: {
@@ -49,7 +49,7 @@ class AuthService {
     agreements: SignupAgreements
   ) {
     const { data } = await axios.post(
-      process.env.NEXT_PUBLIC_API_HOST + "/auth/signup",
+      `${process.env.NEXT_PUBLIC_API_HOST}/auth/signup`,
       { email, password, name, phoneNumber, agreements }
     );
 
@@ -60,7 +60,7 @@ class AuthService {
   /** 이미 생성된 계정의 토큰을 발급받습니다. */
   async login(email: string, password: string) {
     const { data } = await axios.post(
-      process.env.NEXT_PUBLIC_API_HOST + "/auth/login",
+      `${process.env.NEXT_PUBLIC_API_HOST}/auth/login`,
       { email, password }
     );
 
