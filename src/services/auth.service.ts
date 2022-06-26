@@ -16,9 +16,7 @@ class AuthService {
   /** refreshToken을 이용해 새로운 토큰을 발급받습니다. */
   async refresh() {
     const refreshToken = cookies.get("refreshToken");
-    if (!refreshToken) {
-      return;
-    }
+    if (!refreshToken) return;
 
     const { data } = await axios.post(
       process.env.NEXT_PUBLIC_API_HOST + "/auth/refresh",
