@@ -12,6 +12,14 @@ type SignupAgreements = {
     | false;
 };
 
+interface SignUpParams {
+  email: string;
+  password: string;
+  name: string;
+  phoneNumber: string;
+  agreements: SignupAgreements;
+}
+
 class AuthService {
   setAccessToken(accessToken: string) {
     cookies.set("accessToken", accessToken, { expires: 1 });
@@ -41,16 +49,10 @@ class AuthService {
   }
 
   /** 새로운 계정을 생성하고 토큰을 발급받습니다. */
-  async signup(
-    email: string,
-    password: string,
-    name: string,
-    phoneNumber: string,
-    agreements: SignupAgreements
-  ) {
+  async signup(params: SignUpParams) {
     const { data } = await axios.post(
       `${process.env.NEXT_PUBLIC_API_HOST}/auth/signup`,
-      { email, password, name, phoneNumber, agreements }
+      params
     );
 
     this.setAccessToken(data.access);
