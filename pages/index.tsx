@@ -1,19 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useQuery } from "react-query";
-
-import { UserService } from "../src/services";
 
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const { data: me } = useQuery("me", UserService.me, {
-    refetchInterval: 500,
-  });
-
-  console.log("내 정보입니다", me);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -27,8 +18,8 @@ const Home: NextPage = () => {
 
         <p className={styles.description}>
           Get started by editing{" "}
-          <code className={styles.code}>src/services</code>,
-          <code className={styles.code}>src/hooks</code>
+          <code className={styles.code}>pages/auth</code>,
+          <code className={styles.code}>src/components/common</code>
         </p>
       </main>
 
