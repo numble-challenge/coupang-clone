@@ -16,7 +16,7 @@
 
 ## button
 
-<img src="./public/image/btn.png" />
+<img src="./public/image/btn.png" width="200" />
 
 쿠팡서비스에서 Button 컴포넌트가 활용되는 방식은 아래와 같습니다.
 
@@ -41,7 +41,7 @@ return (
 
 ## input
 
-<img src="./public/image/input.png" />
+<img src="./public/image/input.png" width="200" />
 
 1. react-hook-form의 register를 사용할 수 있어야 한다.
 2. focus시 border-bottom이 파란색으로, error시 빨간색으로 바뀐다.
@@ -80,7 +80,7 @@ const Login: NextPage = () => {
 
 ## Checkbox, CheckBoxGroup
 
-<img src="./public/image/checkbox.png" />
+<img src="./public/image/checkbox.png" width="200" />
 
 <br><br>
 
