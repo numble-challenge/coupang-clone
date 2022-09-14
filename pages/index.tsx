@@ -18,8 +18,7 @@ const Home: NextPage = () => {
 
         <p className={styles.description}>
           Get started by editing{" "}
-          <code className={styles.code}>pages/auth</code>,
-          <code className={styles.code}>src/components/common</code>
+          <code className={styles.code}>pages/checkout/[id]</code>
         </p>
       </main>
 
